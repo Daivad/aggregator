@@ -8,16 +8,17 @@ on:
 permissions:
   contents: write
  
-run: |
-   pip install tqdm
-
-
 jobs:
   execute-script:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Install tqdm
+      run: |
+        pip install tqdm
+
 
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
